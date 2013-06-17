@@ -1,0 +1,11 @@
+{
+  "name": "Busco Pension",
+  "version": "3.0.0",
+  "dependencies": {
+    "requirejs": "latest",
+    "jquery": "latest",
+    "backbone-amd": "latest",
+    "underscore-amd": "latest",
+    "jquery-ui": "lastest"
+  }
+}
