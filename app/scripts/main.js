@@ -1,6 +1,5 @@
 require.config({
     baseUrl: "scripts/",
-    enforceDefine: true,
     paths: {
         'underscore': 'vendor/underscore-amd/underscore',
         'backbone': 'vendor/backbone-amd/backbone',
@@ -28,13 +27,16 @@ require.config({
     }
 });
 
-require(["jquery", "autocomplete", "underscore", "backbone","Views/app"],
-        function($,$$,  _, Backbone, View) {
+require(["jquery", "autocomplete", "underscore", "backbone", "Views/AutocompleteView"],
+        function($, $$, _, Backbone, autocompleteView) {
             console.log("Test output");
             console.log("$: " + typeof $);
             console.log("_: " + typeof _);
             console.log("$$: " + typeof $$);
             console.log("Backbone: " + typeof Backbone);
-            console.log("View: " +typeof View);
+            console.log("View: " + typeof autocompleteView);
+
+            var autocomplete_view = new autocompleteView();
+            autocomplete_view.render();
         }
 );
