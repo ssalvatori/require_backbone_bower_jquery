@@ -1,24 +1,34 @@
-require(["jquery", "autocomplete", "underscore", "backbone"],
-        function($, $$, _, Backbone) {
-            var autocompleteView = Backbone.View.extend({
-                initialize: function() {
-                    this.myCollection = [
-                        'Santiago',
-                        'Concepción',
-                        'Valparaiso',
-                        'La Serena'
-                    ];
-                    console.log(this.myCollection);
-                    this.render();
-                },
-                render: function() {
-                    $$("#city").autocomplete({
-                        source: this.myCollection
-                    });
-                    return this;
-                }
+define([
+    'jquery',
+    'underscore',
+    'backbone',
+], function(jquery, underscore, Backbone) {
+    var autocompleteView = Backbone.View.extend({
+        initialize: function() {
+            this.myCollection = [
+                'Santiago',
+                'Concepción',
+                'Valparaiso',
+                'La Serena'
+            ];
+        },
+        el: '#city',
+        events: {
+            'keydo': 'showAlert'
+        },
+                
+        render: function() {
+            this.$el.autocomplete({
+                source: this.myCollection
             });
-
-            return autocompleteView;
-        });
+        },
+                
+        showAlert: function() {
+            alert("focus");
+        }
         
+    });
+
+    return autocompleteView;
+
+});

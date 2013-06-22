@@ -4,20 +4,13 @@ require.config({
         'underscore': 'vendor/underscore-amd/underscore',
         'backbone': 'vendor/backbone-amd/backbone',
         'jquery': 'vendor/jquery/jquery',
-        'jquery-ui': 'vendor/jquery-ui/ui/jquery-ui',
-        'autocomplete': 'vendor/jquery-ui/ui/jquery.ui.autocomplete'
+        'jquery.ui': 'vendor/jquery-ui/ui/jquery-ui',
+        'jquery.ui.autocomplete': 'vendor/jquery-ui/ui/jquery.ui.autocomplete'
     },
     shim: {
-        'autocomplete': {
-            exports: "$",
-            deps: ['jquery-ui']
-        },
-        'jquery-ui': {
-            exports: "$",
-            deps: ['jquery']
-        },
+        'jquery.ui.autocomplete': ['jquery.ui'],
+        'jquery.ui': ['jquery'],
         'underscore': {
-            deps: [],
             exports: "_"
         },
         'backbone': {
@@ -27,14 +20,12 @@ require.config({
     }
 });
 
-require(["jquery", "autocomplete", "underscore", "backbone", "Views/AutocompleteView"],
-        function($, $$, _, Backbone, autocompleteView) {
-            console.log("Test output");
-            console.log("$: " + typeof $);
-            console.log("_: " + typeof _);
-            console.log("$$: " + typeof $$);
-            console.log("Backbone: " + typeof Backbone);
-            console.log("View: " + typeof autocompleteView);
+require(["jquery",
+    "jquery.ui.autocomplete",
+    "underscore",
+    "backbone",
+    "views/AutocompleteView"],
+        function(jquery, autocomplete, underscore, Backbone, autocompleteView) {
 
             var autocomplete_view = new autocompleteView();
             autocomplete_view.render();
