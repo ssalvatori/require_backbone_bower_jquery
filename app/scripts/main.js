@@ -1,5 +1,6 @@
 require.config({
     baseUrl: "scripts/",
+    urlArgs: "bust=" + (new Date()).getTime(),
     paths: {
         'underscore': 'vendor/underscore-amd/underscore',
         'backbone': 'vendor/backbone-amd/backbone',
@@ -24,10 +25,9 @@ require(["jquery",
     "jquery.ui.autocomplete",
     "underscore",
     "backbone",
-    "views/AutocompleteView"],
+    "views/Autocomplete"],
         function(jquery, autocomplete, underscore, Backbone, autocompleteView) {
-
             var autocomplete_view = new autocompleteView();
-            autocomplete_view.render();
+            //autocomplete_view.render();
         }
 );

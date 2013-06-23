@@ -1,0 +1,32 @@
+{"cities": [
+        {
+            "name": "Concepción",
+            "cordinateX": 1,
+            "cordnateY": 2
+        },
+        {
+            "name": "Santiago",
+            "cordinateX": 1,
+            "cordnateY": 2
+        },
+        {
+            "name": "Viña del Mar",
+            "cordinateX": 1,
+            "cordnateY": 2
+        },
+        {
+            "name": "San Pedro de la Paz",
+            "cordinateX": 1,
+            "cordnateY": 2
+        },
+        {
+            "name": "Temuco",
+            "cordinateX": 1,
+            "cordnateY": 2
+        },
+        {
+            "name": "Valparaiso",
+            "cordinateX": 1,
+            "cordnateY": 2
+        }
+    ]}
