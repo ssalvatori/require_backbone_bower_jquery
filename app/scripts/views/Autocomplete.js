@@ -7,6 +7,9 @@ define([
 
     var autocompleteView = Backbone.View.extend({
         el: '#city',
+        events: {
+            "click .searchData": "searchData",
+        },
         initialize: function() {
             //create collection
             this.collection = new CitiesCollection();
@@ -31,7 +34,7 @@ define([
                 source: this.collection.getCitiesNames()
             });
         },
-        showAlert: function() {
+        searchData: function() {
             alert("focus");
         }
 

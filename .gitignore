@@ -1,2 +1,4 @@
-app/scripts/vendor
+/dist/
+/app/scripts/vendor/
+/app/css/themes/
 .DS_Store

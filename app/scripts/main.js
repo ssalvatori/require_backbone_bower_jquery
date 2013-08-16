@@ -2,11 +2,11 @@ require.config({
     baseUrl: "scripts/",
     urlArgs: "bust=" + (new Date()).getTime(),
     paths: {
-        'underscore': 'vendor/underscore-amd/underscore',
-        'backbone': 'vendor/backbone-amd/backbone',
-        'jquery': 'vendor/jquery/jquery',
-        'jquery.ui': 'vendor/jquery-ui/ui/jquery-ui',
-        'jquery.ui.autocomplete': 'vendor/jquery-ui/ui/jquery.ui.autocomplete'
+        'underscore': 'vendor/underscore-min',
+        'backbone': 'vendor/backbone-min',
+        'jquery': 'vendor/jquery.min',
+        'jquery.ui': 'vendor/jquery-ui.min',
+        'jquery.ui.autocomplete': 'vendor/jquery.ui.autocomplete.min'
     },
     shim: {
         'jquery.ui.autocomplete': ['jquery.ui'],

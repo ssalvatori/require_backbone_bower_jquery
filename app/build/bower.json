@@ -6,6 +6,7 @@
     "jquery": "latest",
     "backbone-amd": "latest",
     "underscore-amd": "latest",
-    "jquery-ui": "lastest"
+    "jquery-ui": "1.10.3",
+    "bootstrap": "2.3.2"
   }
 }

@@ -7,10 +7,10 @@ Download source code
 
 > git clone https://github.com/ssalvatori/require_backbone_bower_jquery
 
-Chande directory
+Install dependencies
 
-> cd require_backbone_bower_jquery \\
+> cd require_backbone_bower_jquery
 
-Install *jquery*, *require*, *jquery-ui* using bower
+> cd app/build
 
-> bower install
+> ./installVendors.sh
