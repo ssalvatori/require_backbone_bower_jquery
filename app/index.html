@@ -3,45 +3,50 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Demo JS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        
         <link rel="stylesheet" href="css/themes/smoothness/jquery-ui.css" />
-        <link rel="stylesheet" href="css/style.css" />
+
+        <title>Demo JS</title>
+        
         <link rel="stylesheet" href="css/bootstrap.css" />
+        <!--<link rel="stylesheet" href="css/bootstrap-responsive.css" />-->
+        
+        <link rel="stylesheet" href="css/bootstrap-style.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        
     </head>
 
     <body>
-        <div id="header">
-            <h1>Demo</h1>
+        
+        <div class="container-narrow colorcontainer">            
+            
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <h3 class="text-muted">BUSCOPENSION</h3>
+            </div>
+                
+            <div class="container">
+                <div id="searchCity">
+                    <form class="form-search">
+                            <input type="text" name="city" id="city" class="input-xlarge search-query" />
+                            <button id="searchData"  name="search" type="submit" class="btn btn-primary">Search</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div id="map-canvas">
+                    
+                </div>   
+            </div>
+            
         </div>
-
-        <div id="searchCity">
-            <fieldset>
-                <label>Ciudad: </label>
-                <input type="text" name="city" id="city" class="city" />
-                <button name="search" id="searchData" class="searchData" ></button>
-            </fieldset>
-        </div>
-
-        <div id="results">
-
-            <ul>
-                <li>resultado 1</li>
-                <li>resultado 2</li>
-                <li>resultado 3</li>
-                <li>resultado 4</li>
-                <li>resultado 5</li>
-                <li>resultado 6</li>
-
-            </ul>
-
-        </div>
-
-        <div id="map">
-
-        </div>
-
         <script data-main="scripts/main.js" src="scripts/vendor/require.js"></script>
 
     </body>
