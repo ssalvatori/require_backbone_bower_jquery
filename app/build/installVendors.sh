@@ -2,27 +2,35 @@
 
 echo "Clean folders"
 rm -rf ../script/vendor/*
+rm -rf ../css/themes/smoothness
 
 echo "Install dependencies using bower"
 bower install
 
-echo "Moving JS files"
-mv ../scripts/vendor/requirejs/require.js ../scripts/vendor/require.js
-mv ../scripts/vendor/underscore-amd/underscore-min.js ../scripts/vendor/underscore-min.js
-mv ../scripts/vendor/jquery/jquery.min.js ../scripts/vendor/jquery.min.js
-mv ../scripts/vendor/jquery-ui/ui/minified/jquery-ui.min.js ../scripts/vendor/jquery-ui.min.js
-mv ../scripts/vendor/jquery-ui/ui/minified/jquery.ui.autocomplete.min.js ../scripts/vendor/jquery.ui.autocomplete.min.js
-mv ../scripts/vendor/backbone-amd/backbone-min.js ../scripts/vendor/backbone-min.js
+echo "Copying JS files"
+cp -rf ../scripts/vendor/requirejs/require.js ../scripts/vendor/require.js
+cp -rf ../scripts/vendor/underscore-amd/underscore.js ../scripts/vendor/underscore.js
+cp -rf ../scripts/vendor/jquery/jquery.js ../scripts/vendor/jquery.js
+cp -rf ../scripts/vendor/jquery-ui/ui/jquery-ui.js ../scripts/vendor/jquery-ui.js
+cp -rf ../scripts/vendor/jquery-ui/ui/jquery.ui.autocomplete.js ../scripts/vendor/jquery.ui.autocomplete.js
+cp -rf ../scripts/vendor/backbone-amd/backbone.js ../scripts/vendor/backbone.js
 
-echo "Moving CSS files"
-mv ../scripts/vendor/bootstrap/docs/assets/css/bootstrap.css ../css/bootstrap.css
-mv ../scripts/vendor/bootstrap/docs/assets/css/bootstrap-responsive.css ../css/bootstrap-responsive.css
-mv ../scripts/vendor/jquery-ui/themes/smoothness  ../css/themes/smoothness
+echo "Copying CSS files"
+cp -rf ../scripts/vendor/bootstrap/docs/assets/css/bootstrap.css ../css/bootstrap.css
+cp -rf ../scripts/vendor/bootstrap/docs/assets/css/bootstrap-responsive.css ../css/bootstrap-responsive.css
+#cp -rf ../scripts/vendor/jquery-ui/themes/smoothness  ../css/themes
 
-echo "Moving MAP files"
-mv ../scripts/vendor/underscore-amd/underscore-min.map ../scripts/vendor/underscore-min.map
-mv ../scripts/vendor/jquery/jquery.min.map ../scripts/vendor/jquery.min.map
-mv ../scripts/vendor/backbone-amd/backbone-min.map ../scripts/vendor/backbone-min.map
+echo "Copying MAP files"
+#cp -rf ../scripts/vendor/underscore-amd/underscore-min.map ../scripts/vendor/underscore-min.map
+#cp -rf ../scripts/vendor/jquery/jquery.min.map ../scripts/vendor/jquery.min.map
+#cp -rf ../scripts/vendor/backbone-amd/backbone-min.map ../scripts/vendor/backbone-min.map
+
+echo "Copying IMG files"
+cp -rf ../scripts/vendor/bootstrap/img/* ../img/
+
+echo "Moving bootstrap files"
+#cp -rf ../scripts/vendor/bootstrap/js/bootstrap.js ../scripts/vendor/bootstrap.js
+cp -rf ../scripts/vendor/bootstrap/docs/assets/js/bootstrap.js ../scripts/vendor/bootstrap.js
 
 echo "Removing files"
 rm -rf ../scripts/vendor/requirejs

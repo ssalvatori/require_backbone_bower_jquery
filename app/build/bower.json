@@ -1,5 +1,5 @@
 {
-  "name": "Busco Pension",
+  "name": "JS sandbox",
   "version": "3.0.0",
   "dependencies": {
     "requirejs": "latest",

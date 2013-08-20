@@ -5,13 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
-        
-        <link rel="stylesheet" href="css/themes/smoothness/jquery-ui.css" />
 
         <title>Demo JS</title>
         
         <link rel="stylesheet" href="css/bootstrap.css" />
-        <!--<link rel="stylesheet" href="css/bootstrap-responsive.css" />-->
+        <link rel="stylesheet" href="css/bootstrap-responsive.css" />
         
         <link rel="stylesheet" href="css/bootstrap-style.css" />
         <link rel="stylesheet" href="css/style.css" />
@@ -23,27 +21,65 @@
         <div class="container-narrow colorcontainer">            
             
             <div class="header">
-                <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul class="nav nav-pills pull-right" id="menuNav">
+                    <li class="active" rel="tooltip"><a href="#" id="navHome">Home</a></li>
+                    <li><a href="#" rel="tooltip" id="navSearch" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top">Search</a></li>
+                    <li><a href="#" rel="tooltip">About</a></li>
+                    <li><a href="#" rel="tooltip">Contact</a></li>
                 </ul>
-                <h3 class="text-muted">BUSCOPENSION</h3>
+                <h3 class="text-muted">DEMO JS</h3>
             </div>
                 
+                        
             <div class="container">
+                
                 <div id="searchCity">
-                    <form class="form-search">
-                            <input type="text" name="city" id="city" class="input-xlarge search-query" />
-                            <button id="searchData"  name="search" type="submit" class="btn btn-primary">Search</button>
+                    <form id="custom-search-form" class="form-search form-horizontal pull-right">
+                        <div class="input-append span12">
+                            <input type="text"  id="city" placeholder="Search by city" class="search-query input-xlarge"/>
+                            <button type="submit" class="btn"><i class="icon-search"></i></button>
+                        </div>
+                        
                     </form>
                 </div>
+
             </div>
             
             <div class="container">
                 <div id="map-canvas">
                     
                 </div>   
+            </div>
+            
+            <div class="row-fluid highlightsBoxs">
+                
+                <div class="span4 highlights">
+                    <h4>ITEM 1</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at dolor massa. Ut eget ante eu orci auctor congue. Nulla mollis sit amet felis in varius. Aenean scelerisque velit mauris, sit amet hendrerit libero mattis eget. Aenean accumsan ultrices sapien, a fringilla justo imperdiet vitae. Integer sit amet condimentum ligula, et consequat augue. Phasellus a imperdiet dolor. Proin lobortis, lorem in ornare sagittis, magna sem dapibus ligula, eu varius lacus nisi non nulla. Donec nulla sapien, dapibus nec semper eget, porttitor sed orci.
+                    </p>
+                </div>
+                
+                <div class="span4 highlights">
+                    <h4>item2</h4>
+                    <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at dolor massa. Ut eget ante eu orci auctor congue. Nulla mollis sit amet felis in varius. Aenean scelerisque velit mauris, sit amet hendrerit libero mattis eget. Aenean accumsan ultrices sapien, a fringilla justo imperdiet vitae. Integer sit amet condimentum ligula, et consequat augue. Phasellus a imperdiet dolor. Proin lobortis, lorem in ornare sagittis, magna sem dapibus ligula, eu varius lacus nisi non nulla. Donec nulla sapien, dapibus nec semper eget, porttitor sed orci.
+                        </p>
+                </div>
+                
+                <div class="span4 highlights">
+                    <h4>item2</h4>
+                    <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at dolor massa. Ut eget ante eu orci auctor congue. Nulla mollis sit amet felis in varius. Aenean scelerisque velit mauris, sit amet hendrerit libero mattis eget. Aenean accumsan ultrices sapien, a fringilla justo imperdiet vitae. Integer sit amet condimentum ligula, et consequat augue. Phasellus a imperdiet dolor. Proin lobortis, lorem in ornare sagittis, magna sem dapibus ligula, eu varius lacus nisi non nulla. Donec nulla sapien, dapibus nec semper eget, porttitor sed orci.</p>
+                </div>
+                            
+            </div>
+            
+            <div class="container-narrow navbar-fixed-bottom">
+                <div class="footerText">
+                    Developed using opensource technologies<br />
+                    2013
+                </div>
             </div>
             
         </div>
