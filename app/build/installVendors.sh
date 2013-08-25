@@ -14,6 +14,7 @@ cp -rf ../scripts/vendor/jquery/jquery.js ../scripts/vendor/jquery.js
 cp -rf ../scripts/vendor/jquery-ui/ui/jquery-ui.js ../scripts/vendor/jquery-ui.js
 cp -rf ../scripts/vendor/jquery-ui/ui/jquery.ui.autocomplete.js ../scripts/vendor/jquery.ui.autocomplete.js
 cp -rf ../scripts/vendor/backbone-amd/backbone.js ../scripts/vendor/backbone.js
+cp -rf ../scripts/vendor/handlebars/handlebars.js ../scripts/vendor/handlebars.js
 
 echo "Copying CSS files"
 cp -rf ../scripts/vendor/bootstrap/docs/assets/css/bootstrap.css ../css/bootstrap.css
@@ -39,3 +40,4 @@ rm -rf ../scripts/vendor/jquery-ui
 rm -rf ../scripts/vendor/bootstrap
 rm -rf ../scripts/vendor/underscore-amd
 rm -rf ../scripts/vendor/backbone-amd
+rm -rf ../scripts/vendor/handlebars
