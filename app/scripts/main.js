@@ -1,33 +1,47 @@
 require.config({
-    baseUrl: "scripts/",
-    urlArgs: "bust=" + (new Date()).getTime(),
+    baseUrl: 'scripts/',
+    urlArgs: 'bust=' + (new Date()).getTime(),
     paths: {
-        'underscore': 'vendor/underscore-min',
-        'backbone': 'vendor/backbone-min',
-        'jquery': 'vendor/jquery.min',
-        'jquery.ui': 'vendor/jquery-ui.min',
-        'jquery.ui.autocomplete': 'vendor/jquery.ui.autocomplete.min'
+        underscore: 'vendor/underscore',
+        backbone:   'vendor/backbone',
+        jquery:     'vendor/jquery',
+        bootstrap:  'vendor/bootstrap',
+        text:       'vendor/text',
+        layoutmanager: 'vendor/backbone.layoutmanager'
     },
     shim: {
-        'jquery.ui.autocomplete': ['jquery.ui'],
-        'jquery.ui': ['jquery'],
-        'underscore': {
-            exports: "_"
+        bootstrap: {
+            deps: ['jquery'],
+            exports: "$.fn.popover"
         },
-        'backbone': {
-            exports: "Backbone",
-            deps: ["underscore", "jquery"]
+/*        backbone: {
+            deps: ['jquery', 'underscore'],
+            exports: "Backbone"
+        },*/
+        layoutmanager: {
+            deps: ["backbone"],
+            exports: "Backbone.Layout"
         }
-    }
+    },
 });
 
+/*
 require(["jquery",
-    "jquery.ui.autocomplete",
     "underscore",
     "backbone",
+    "bootstrap",
     "views/Autocomplete"],
-        function(jquery, autocomplete, underscore, Backbone, autocompleteView) {
+        function($, underscore, Backbone, Bootstrap, autocompleteView) {
+            "use strict";
+            $("#navSearch").tooltip();
             var autocomplete_view = new autocompleteView();
-            //autocomplete_view.render();
         }
+);
+*/
+
+require([
+  'App'
+  ], function(App) {
+    App.initialize();
+  }
 );
