@@ -1,14 +1,13 @@
 define([
-    'jquery',
-    'underscore',
-    'backbone',
     'views/Home',
-], function($, _, Backbone, HomeView) {
+    'views/Contact',
+], function(HomeView, ContactView) {
   
   var Routes = Backbone.Router.extend({
     routes: {
-      'home': 'showHome',
-      '*actions': 'default'
+        'home': 'showHome',
+        'contact':  'showContact',
+        '*actions': 'default'
     }
   });
   
@@ -22,6 +21,12 @@ define([
 //      var homeView = new HomeView();
 //      homeView.render();
     });
+      
+    appRouter.on('route:showContact', function() {
+        console.log("show Contact");
+        var contactView = new ContactView();
+        contactView.render();
+    });
 
     appRouter.on('route:default', function (actions) {     
         console.log("default route");
@@ -30,7 +35,10 @@ define([
         homeView.render();
     });
 
-    Backbone.history.start({ pushState: true, root: "/buscopension/app/index.html"});
+    Backbone.history.start({ 
+    //    pushState: true, 
+        root: "/buscopension/app/"
+    });
   };
 
   return { 

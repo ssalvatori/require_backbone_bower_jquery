@@ -1,45 +1,45 @@
-define([
-    'jquery',
-    'underscore',
-    'backbone',
-    'collections/Cities'
-], function($, _, Backbone, CitiesCollection) {
+define(['underscore', 'backbone',    
+        'views/Search',
+        'views/Map',
+        'vendor/text!../templates/home.tpl' 
+       ], 
+function (_, Backbone, searchView, mapView) {
 
     var HomeView = Backbone.View.extend({
-        el: '#city',
-        events: {
-            "click .searchData": "searchData",
-        },
+        el: '#body',
+        
+        template: _.template(""),
+        
         initialize: function() {
-            //create collection
-            this.collection = new CitiesCollection();
-
-            //fill collection with json data
-            this.getCities();
+            this.searchSubView = new searchView();
+            this.mapSubView = new mapView();
         },
-        getCities: function() {
-            var that = this;
-            this.collection.fetch({
-                error: function(model, xhr, options) {
-                    console.log("Failed to fetch!");
-                },
-                success: function(collection) {
-                    that.render();
-                }
+                
+        render : function () {
+            this.$el.html(this.template());
+        
+            this.assign({
+                '#searchCity'   : this.searchSubView,
+                '#mapCanvas'    : this.mapView,
             });
+            return this;
         },
-        render: function() {
-            //set autocompletor behaviour
-            //this.$el.autocomplete({
-            //    source: this.collection.getCitiesNames()
-            //});
-        },
-        searchData: function() {
-            alert("focus");
+        assign : function (selector, view) {
+            var selectors;
+            if (_.isObject(selector)) {
+                selectors = selector;
+            }
+            else {
+                selectors = {};
+                selectors[selector] = view;
+            }
+            if (!selectors) return;
+            _.each(selectors, function (view, selector) {
+                view.setElement(this.$(selector)).render();
+            }, this);
         }
-
+ 
     });
 
     return HomeView;
-
 });
